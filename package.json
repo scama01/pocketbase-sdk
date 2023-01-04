@@ -1,0 +1,31 @@
+{
+  "name": "pocketbase-sdk",
+  "version": "0.0.1",
+  "description": "Unofficial JavaScript SDK for interacting with the PocketBase API.",
+  "main": "dist/pocketbase.js",
+  "module": "dist/pocketbase.mjs",
+  "typings": "dist/pocketbase.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "author": "scama01",
+  "license": "ISC",
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "test": "ts-node-esm test/index.ts"
+  },
+  "dependencies": {
+    "axios": "^1.2.1",
+    "eventsource": "^2.0.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.2.1",
+    "@types/eventsource": "^1.1.10",
+    "@types/node": "^18.11.17",
+    "esbuild": "^0.16.13",
+    "rollup": "^3.9.1",
+    "rollup-plugin-dts": "^5.1.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "ts-node": "^10.9.1"
+  }
+}
