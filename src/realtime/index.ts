@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as EventSource from "eventsource";
-import * as path from "path";
+import * as path from "path-browserify";
 import Client from "../client";
 import { AnyRecord, BaseRecord, RealtimeResponse } from "../types";
 import { RequestError } from "../utils";

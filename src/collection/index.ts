@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as path from "path";
+import * as path from "path-browserify";
 import Client from "../client";
 import {
   BaseRecord,

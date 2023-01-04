@@ -26,6 +26,22 @@ export default [
     ],
   }),
   bundle({
+    plugins: [esbuild.default()],
+    output: [
+      {
+        file: `${name}.umd.js`,
+        format: "umd",
+        sourcemap: true,
+        name: "PocketBase",
+        globals: {
+          "path-browserify": "path",
+          axios: "axios",
+          eventsource: "EventSource",
+        },
+      },
+    ],
+  }),
+  bundle({
     plugins: [dts.default()],
     output: {
       file: `${name}.d.ts`,

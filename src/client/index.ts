@@ -1,4 +1,4 @@
-import * as path from "path";
+import * as path from "path-browserify";
 import Auth from "../auth";
 import Collection from "../collection";
 import AuthCollection from "../collection/auth";

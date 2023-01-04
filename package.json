@@ -12,25 +12,34 @@
   "files": [
     "/dist"
   ],
+  "exports": {
+    ".": "./dist/pocketbase.mjs",
+    "./cjs": "./dist/pocketbase.js",
+    "./umd": "./dist/pocketbase.umd.js"
+  },
   "author": "scama01",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs",
+    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs",
     "test": "ts-node-esm test/index.ts"
   },
   "dependencies": {
     "axios": "^1.2.1",
-    "eventsource": "^2.0.2"
+    "eventsource": "^2.0.2",
+    "path-browserify": "^1.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.2.1",
     "@types/eventsource": "^1.1.10",
     "@types/node": "^18.11.17",
+    "@types/path-browserify": "^1.0.0",
     "esbuild": "^0.16.13",
     "rollup": "^3.9.1",
     "rollup-plugin-dts": "^5.1.0",
     "rollup-plugin-esbuild": "^5.0.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
   },
   "repository": {
     "type": "git",

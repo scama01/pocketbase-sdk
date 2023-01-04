@@ -1,4 +1,4 @@
-import * as path from 'path';
+import * as path from 'path-browserify';
 import axios from 'axios';
 import * as EventSource from 'eventsource';
 

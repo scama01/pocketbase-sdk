@@ -1,6 +1,6 @@
 'use strict';
 
-var path = require('path');
+var path = require('path-browserify');
 var axios = require('axios');
 var EventSource = require('eventsource');
 
