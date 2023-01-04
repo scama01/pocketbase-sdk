@@ -9,7 +9,7 @@
     "/dist"
   ],
   "author": "scama01",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "test": "ts-node-esm test/index.ts"
