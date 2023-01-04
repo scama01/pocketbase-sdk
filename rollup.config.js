@@ -1,5 +1,6 @@
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
+import nodePolyfills from "rollup-plugin-polyfill-node";
 
 const name = require("./package.json").main.replace(/\.js$/, "");
 
@@ -11,7 +12,7 @@ const bundle = (config) => ({
 
 export default [
   bundle({
-    plugins: [esbuild.default()],
+    plugins: [esbuild.default(), nodePolyfills()],
     output: [
       {
         file: `${name}.js`,
@@ -26,7 +27,7 @@ export default [
     ],
   }),
   bundle({
-    plugins: [esbuild.default()],
+    plugins: [esbuild.default(), nodePolyfills()],
     output: [
       {
         file: `${name}.umd.js`,

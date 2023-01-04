@@ -1,6 +1,6 @@
 {
   "name": "pocketbase-sdk",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Unofficial JavaScript SDK for interacting with the PocketBase API.",
   "main": "dist/pocketbase.js",
   "module": "dist/pocketbase.mjs",
@@ -37,6 +37,7 @@
     "rollup": "^3.9.1",
     "rollup-plugin-dts": "^5.1.0",
     "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-polyfill-node": "^0.11.0",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
