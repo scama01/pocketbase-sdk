@@ -1,6 +1,6 @@
 {
   "name": "pocketbase-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Unofficial JavaScript SDK for interacting with the PocketBase API.",
   "main": "dist/pocketbase.js",
   "module": "dist/pocketbase.mjs",
@@ -27,5 +27,13 @@
     "rollup-plugin-dts": "^5.1.0",
     "rollup-plugin-esbuild": "^5.0.0",
     "ts-node": "^10.9.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scama01/pocketbase-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/scama01/pocketbase-sdk/issues"
+  },
+  "homepage": "https://github.com/scama01/pocketbase-sdk#readme"
 }
