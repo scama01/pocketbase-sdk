@@ -1,10 +1,14 @@
 {
   "name": "pocketbase-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Unofficial JavaScript SDK for interacting with the PocketBase API.",
   "main": "dist/pocketbase.js",
   "module": "dist/pocketbase.mjs",
   "typings": "dist/pocketbase.d.ts",
+  "keywords": [
+    "pocketbase",
+    "pocketbase-sdk"
+  ],
   "files": [
     "/dist"
   ],
