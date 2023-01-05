@@ -37,7 +37,7 @@ export default [
         globals: {
           "path-browserify": "path",
           axios: "axios",
-          eventsource: "EventSource",
+          "event-source-polyfill": "eventSourcePolyfill",
         },
       },
     ],

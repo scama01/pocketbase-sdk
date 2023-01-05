@@ -1,6 +1,6 @@
 {
   "name": "pocketbase-sdk",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Unofficial JavaScript SDK for interacting with the PocketBase API.",
   "main": "dist/pocketbase.js",
   "module": "dist/pocketbase.mjs",
@@ -25,11 +25,12 @@
   },
   "dependencies": {
     "axios": "^1.2.1",
-    "eventsource": "^2.0.2",
+    "event-source-polyfill": "^1.0.31",
     "path-browserify": "^1.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.2.1",
+    "@types/event-source-polyfill": "^1.0.0",
     "@types/eventsource": "^1.1.10",
     "@types/node": "^18.11.17",
     "@types/path-browserify": "^1.0.0",

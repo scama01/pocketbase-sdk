@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('path-browserify'), require('axios'), require('eventsource')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'path-browserify', 'axios', 'eventsource'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.PocketBase = {}, global.path, global.axios, global.EventSource));
-})(this, (function (exports, path, axios, EventSource) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('path-browserify'), require('axios'), require('event-source-polyfill')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'path-browserify', 'axios', 'event-source-polyfill'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.PocketBase = {}, global.path, global.axios, global.eventSourcePolyfill));
+})(this, (function (exports, path, axios, eventSourcePolyfill) { 'use strict';
 
   function _interopNamespaceDefault(e) {
     var n = Object.create(null);
@@ -22,7 +22,6 @@
   }
 
   var path__namespace = /*#__PURE__*/_interopNamespaceDefault(path);
-  var EventSource__namespace = /*#__PURE__*/_interopNamespaceDefault(EventSource);
 
   let atobPolyfill;
   if (typeof atob === "function") {
@@ -574,6 +573,7 @@
     }
   }
 
+  const EventSource = eventSourcePolyfill.NativeEventSource || eventSourcePolyfill.EventSourcePolyfill;
   class Realtime {
     client;
     realtimeInstance;
@@ -649,7 +649,7 @@
     }
     async initialize() {
       await new Promise((resolve) => {
-        this.realtimeInstance = new EventSource__namespace(
+        this.realtimeInstance = new EventSource(
           new URL(path__namespace.join(this.client.apiURL, "realtime")).toString()
         );
         this.realtimeInstance.addEventListener("PB_CONNECT", async (data) => {

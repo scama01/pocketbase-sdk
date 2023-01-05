@@ -1,6 +1,6 @@
 import * as path from 'path-browserify';
 import axios from 'axios';
-import * as EventSource from 'eventsource';
+import { NativeEventSource, EventSourcePolyfill } from 'event-source-polyfill';
 
 let atobPolyfill;
 if (typeof atob === "function") {
@@ -552,6 +552,7 @@ class AuthCollection extends Collection {
   }
 }
 
+const EventSource = NativeEventSource || EventSourcePolyfill;
 class Realtime {
   client;
   realtimeInstance;

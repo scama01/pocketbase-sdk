@@ -2,7 +2,7 @@
 
 var path = require('path-browserify');
 var axios = require('axios');
-var EventSource = require('eventsource');
+var eventSourcePolyfill = require('event-source-polyfill');
 
 function _interopNamespaceDefault(e) {
   var n = Object.create(null);
@@ -22,7 +22,6 @@ function _interopNamespaceDefault(e) {
 }
 
 var path__namespace = /*#__PURE__*/_interopNamespaceDefault(path);
-var EventSource__namespace = /*#__PURE__*/_interopNamespaceDefault(EventSource);
 
 let atobPolyfill;
 if (typeof atob === "function") {
@@ -574,6 +573,7 @@ class AuthCollection extends Collection {
   }
 }
 
+const EventSource = eventSourcePolyfill.NativeEventSource || eventSourcePolyfill.EventSourcePolyfill;
 class Realtime {
   client;
   realtimeInstance;
@@ -649,7 +649,7 @@ class Realtime {
   }
   async initialize() {
     await new Promise((resolve) => {
-      this.realtimeInstance = new EventSource__namespace(
+      this.realtimeInstance = new EventSource(
         new URL(path__namespace.join(this.client.apiURL, "realtime")).toString()
       );
       this.realtimeInstance.addEventListener("PB_CONNECT", async (data) => {

@@ -1,9 +1,11 @@
 import axios from "axios";
-import * as EventSource from "eventsource";
+import { EventSourcePolyfill, NativeEventSource } from "event-source-polyfill";
 import * as path from "path-browserify";
 import Client from "../client";
 import { AnyRecord, BaseRecord, RealtimeResponse } from "../types";
 import { RequestError } from "../utils";
+
+const EventSource = NativeEventSource || EventSourcePolyfill;
 
 export default class Realtime {
   private readonly client: Client<any>;
