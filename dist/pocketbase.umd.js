@@ -540,7 +540,7 @@
     }
     async authWithPassword(identity, password) {
       const res = await axios({
-        url: path__namespace.join(this.url, "auth-with-password"),
+        url: new URL(path__namespace.join(this.url, "auth-with-password")).toString(),
         method: "POST",
         data: {
           identity,
@@ -558,7 +558,7 @@
     }
     async authRefresh() {
       const res = await axios({
-        url: path__namespace.join(this.url, "auth-refresh"),
+        url: new URL(path__namespace.join(this.url, "auth-refresh")).toString(),
         method: "POST",
         headers: {
           "Content-Type": "application/json",
