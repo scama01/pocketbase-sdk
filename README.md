@@ -17,3 +17,5 @@ Unofficial JavaScript SDK for interacting with the [PocketBase API](https://pock
   - [SSR Integration]()
 
 will document later :P
+and is still a wip
+it doesn't even have error handling yet

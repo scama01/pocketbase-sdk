@@ -89,7 +89,7 @@ export default class AuthCollection<
    */
   async authWithPassword(identity: string, password: string) {
     const res = await axios({
-      url: path.join(this.url, "auth-with-password"),
+      url: new URL(path.join(this.url, "auth-with-password")).toString(),
       method: "POST",
       data: {
         identity,
@@ -113,7 +113,7 @@ export default class AuthCollection<
    */
   async authRefresh() {
     const res = await axios({
-      url: path.join(this.url, "auth-refresh"),
+      url: new URL(path.join(this.url, "auth-refresh")).toString(),
       method: "POST",
       headers: {
         "Content-Type": "application/json",
